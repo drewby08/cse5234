@@ -7,12 +7,12 @@
 
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="UserID" type="xs:string"></xs:element>
 							<xs:element name="CartID" type="xs:string"></xs:element>
 							<xs:element name="ReviewID" type="xs:string"></xs:element>
 							<xs:element name="ProfileID" type="xs:string"></xs:element>
 							<xs:element name="Admin" type="xs:boolean"></xs:element>
 						</xs:sequence>
-						<xs:attribute name="UserID" type="xs:string"></xs:attribute>
 					</xs:complexType>
 				</xs:element>
 
@@ -20,11 +20,12 @@
 
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="ISBN" type="xs:string"></xs:element>
 							<xs:element name="Title" type="xs:string"></xs:element>
 							<xs:element name="Author" type="xs:string"></xs:element>
 							<xs:element name="Price" type="xs:int"></xs:element>
 						</xs:sequence>
-						<xs:attribute name="ISBN" type="xs:string"></xs:attribute>
+
 					</xs:complexType>
 				</xs:element>
 
@@ -32,10 +33,10 @@
 
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="CartID" type="xs:string"></xs:element>
 							<xs:element name="ISBN" type="xs:string"></xs:element>
 							<xs:element name="DownloadLink" type="xs:string"></xs:element>
 						</xs:sequence>
-						<xs:attribute name="CartID" type="xs:string"></xs:attribute>
 					</xs:complexType>
 				</xs:element>
 
@@ -43,12 +44,13 @@
 
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="ReviewID" type="xs:string"></xs:element>
 							<xs:element name="ISBN" type="xs:string"></xs:element>
 							<xs:element name="UserID" type="xs:string"></xs:element>
 							<xs:element name="Stars" type="xs:int"></xs:element>
 							<xs:element name="Description" type="xs:string"></xs:element>
 						</xs:sequence>
-						<xs:attribute name="ReviewID" type="xs:string"></xs:attribute>
+
 					</xs:complexType>
 				</xs:element>
 
@@ -56,6 +58,7 @@
 
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="ProfileID" type="xs:string"></xs:element>
 							<xs:element name="FirstName" type="xs:string"></xs:element>
 							<xs:element name="LastName" type="xs:string"></xs:element>
 							<xs:element name="Address" type="xs:string"></xs:element>
@@ -63,7 +66,7 @@
 							<xs:element name="CreditCard" type="xs:string"></xs:element>
 							<xs:element name="Password" type="xs:string"></xs:element>
 						</xs:sequence>
-						<xs:attribute name="ProfileID" type="xs:string"></xs:attribute>
+
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

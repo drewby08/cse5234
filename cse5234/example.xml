@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EbookStoreSchema.xsd">
+  <USER>
+    <UserID>UserID</UserID>
+    <CartID>CartID</CartID>
+    <ReviewID>ReviewID</ReviewID>
+    <ProfileID>ProfileID</ProfileID>
+    <Admin>true</Admin>
+  </USER>
+  <EBOOK>
+    <ISBN>ISBN</ISBN>
+    <Title>Title</Title>
+    <Author>Author</Author>
+    <Price>0</Price>
+  </EBOOK>
+  <CART>
+    <CartID>CartID</CartID>
+    <ISBN>ISBN</ISBN>
+    <DownloadLink>DownloadLink</DownloadLink>
+  </CART>
+  <Review>
+    <ReviewID>ReviewID</ReviewID>
+    <ISBN>ISBN</ISBN>
+    <UserID>UserID</UserID>
+    <Stars>0</Stars>
+    <Description>Description</Description>
+  </Review>
+  <Profile>
+    <ProfileID>ProfileID</ProfileID>
+    <FirstName>FirstName</FirstName>
+    <LastName>LastName</LastName>
+    <Address>Address</Address>
+    <Email>Email</Email>
+    <CreditCard>CreditCard</CreditCard>
+    <Password>Password</Password>
+  </Profile>
+</ROOT>
