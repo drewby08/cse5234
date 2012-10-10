@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:USER xmlns:tns="http://www.example.org/EbookStoreSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/EbookStoreSchema EbookStoreSchema.xsd ">
+  <tns:CartID>1</tns:CartID>
+  <tns:ReviewID>1</tns:ReviewID>
+  <tns:ProfileID>1</tns:ProfileID>
+  <tns:Admin>true</tns:Admin>
+</tns:USER>

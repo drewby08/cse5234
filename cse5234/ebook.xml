@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:EBOOK xmlns:tns="http://www.example.org/EbookStoreSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/EbookStoreSchema EbookStoreSchema.xsd ">
+  <tns:Title>Huck Fin</tns:Title>
+  <tns:Author>Mark Twain</tns:Author>
+  <tns:Price>1000000000</tns:Price>
+</tns:EBOOK>

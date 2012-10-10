@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Profile xmlns:tns="http://www.example.org/EbookStoreSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/EbookStoreSchema EbookStoreSchema.xsd ">
+  <tns:FirstName>Alex</tns:FirstName>
+  <tns:LastName>Heck</tns:LastName>
+  <tns:Address>123 Fake Street</tns:Address>
+  <tns:Email>heck(at)heck.com'</tns:Email>
+  <tns:CreditCard>1234123412341234</tns:CreditCard>
+  <tns:Password>password</tns:Password>
+</tns:Profile>

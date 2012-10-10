@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EbookStoreSchema" xmlns:tns="http://www.example.org/EbookStoreSchema" elementFormDefault="qualified">
+
+    <element name="USER" type="tns:UserType"></element>
+    
+    <complexType name="UserType">
+    	<sequence>
+    		<element name="CartID" type="string"></element>
+    		<element name="ReviewID" type="string"></element>
+    		<element name="ProfileID" type="string"></element>
+    		<element name="Admin" type="boolean"></element>
+    	</sequence>
+    	<attribute name="UserID" type="string"></attribute>
+    </complexType>
+
+    <element name="EBOOK" type="tns:EbookType"></element>
+    
+    <complexType name="EbookType">
+    	<sequence>
+    		<element name="Title" type="string"></element>
+    		<element name="Author" type="string"></element>
+    		<element name="Price" type="int"></element>
+    	</sequence>
+    	<attribute name="ISBN" type="string"></attribute>
+    </complexType>
+
+    <element name="CART" type="tns:CartType"></element>
+    
+    <complexType name="CartType">
+    	<sequence>
+    		<element name="ISBN" type="string"></element>
+    		<element name="DownloadLink" type="string"></element>
+    	</sequence>
+    	<attribute name="CartID" type="string"></attribute>
+    </complexType>
+
+    <element name="Review" type="tns:ReviewType"></element>
+    
+    <complexType name="ReviewType">
+    	<sequence>
+    		<element name="ISBN" type="string"></element>
+    		<element name="UserID" type="string"></element>
+    		<element name="Stars" type="int"></element>
+    		<element name="Description" type="string"></element>
+    	</sequence>
+    	<attribute name="ReviewID" type="string"></attribute>
+    </complexType>
+
+    <element name="Profile" type="tns:ProfileType"></element>
+    
+    <complexType name="ProfileType">
+    	<sequence>
+    		<element name="FirstName" type="string"></element>
+    		<element name="LastName" type="string"></element>
+    		<element name="Address" type="string"></element>
+    		<element name="Email" type="string"></element>
+    		<element name="CreditCard" type="string"></element>
+    		<element name="Password" type="string"></element>
+    	</sequence>
+    	<attribute name="ProfileID" type="string"></attribute>
+    </complexType>
+</schema>
