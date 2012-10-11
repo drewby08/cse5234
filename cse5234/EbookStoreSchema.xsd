@@ -11,6 +11,7 @@
 							<xs:element name="CartID" type="xs:string"></xs:element>
 							<xs:element name="ReviewID" type="xs:string"></xs:element>
 							<xs:element name="ProfileID" type="xs:string"></xs:element>
+							<xs:element name="Password" type="xs:string"></xs:element>
 							<xs:element name="Admin" type="xs:boolean"></xs:element>
 						</xs:sequence>
 					</xs:complexType>
@@ -64,7 +65,6 @@
 							<xs:element name="Address" type="xs:string"></xs:element>
 							<xs:element name="Email" type="xs:string"></xs:element>
 							<xs:element name="CreditCard" type="xs:string"></xs:element>
-							<xs:element name="Password" type="xs:string"></xs:element>
 						</xs:sequence>
 
 					</xs:complexType>

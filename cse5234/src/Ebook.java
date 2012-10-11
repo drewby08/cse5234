@@ -1,8 +1,9 @@
 import java.math.BigDecimal;
+import java.sql.Connection;
 
 public class Ebook {
 	
-	private int isbn;
+	private String isbn;
 	private String title;
 	private String author;
 	private BigDecimal price;
@@ -11,7 +12,7 @@ public class Ebook {
 		
 	}
 	
-	public Ebook(int isbn, String title, String author, BigDecimal price){
+	public Ebook(String isbn, String title, String author, BigDecimal price){
 		this.isbn = isbn;
 		this.title = title;
 		this.author = author;
@@ -19,11 +20,11 @@ public class Ebook {
 		
 	}
 
-	public int getIsbn() {
+	public String getIsbn() {
 		return this.isbn;
 	}
 
-	public void setIsbn(int isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
@@ -49,6 +50,27 @@ public class Ebook {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
+	}
+	
+	//inserts into DB
+	public void insert(Connection conn){
+		
+	}
+	
+	//updates in DB
+	public void update(Connection conn){
+		
+	}
+	
+	//deletes from DB
+	public static void delete(int isbn,Connection conn){
+		
+	}
+	
+	//fetches from the DB
+	public static Ebook fetch(String isbn,Connection conn){
+		
+		return new Ebook();
 	}
 
 }

@@ -15,13 +15,13 @@ import org.xml.sax.SAXException;
 public class XmlDomParser {
 
 	//No generics
-	List myEmpls;
+	List<Cart> mycarts;
 	Document dom;
 
 
 	public XmlDomParser(){
-		//create a list to hold the employee objects
-		myEmpls = new ArrayList();
+		//create a list to hold the cart objects
+		mycarts = new ArrayList<Cart>();
 	}
 
 	public void runExample() {
@@ -29,9 +29,10 @@ public class XmlDomParser {
 		//parse the xml file and get the dom object
 		parseXmlFile();
 		
-		//get each employee element and create a Employee object
+		//get each cart element and create a cart object
 		parseDocument();
 		
+		//TODO Connect to DB and insert into db
 		//Iterate through the list and print the data
 		printData();
 		
@@ -48,7 +49,7 @@ public class XmlDomParser {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			
 			//parse using builder to get DOM representation of the XML file
-			dom = db.parse("employees.xml");
+			dom = db.parse("cart.xml");
 			
 
 		}catch(ParserConfigurationException pce) {
@@ -65,52 +66,50 @@ public class XmlDomParser {
 		//get the root elememt
 		Element docEle = dom.getDocumentElement();
 		
-		//get a nodelist of <employee> elements
-		NodeList nl = docEle.getElementsByTagName("Employee");
+		//get a nodelist of <cart> elements
+		NodeList nl = docEle.getElementsByTagName("CART");
 		if(nl != null && nl.getLength() > 0) {
 			for(int i = 0 ; i < nl.getLength();i++) {
 				
-				//get the employee element
+				//get the cart element
 				Element el = (Element)nl.item(i);
 				
-				//get the Employee object
-				Employee e = getEmployee(el);
+				//get the Cart object
+				Cart cart = getCart(el);
 				
 				//add it to list
-				myEmpls.add(e);
+				mycarts.add(cart);
 			}
 		}
 	}
 
 
 	/**
-	 * I take an employee element and read the values in, create
-	 * an Employee object and return it
+	 * I take an cart element and read the values in, create
+	 * a cart object and return it
 	 * @param empEl
 	 * @return
 	 */
-	private Employee getEmployee(Element empEl) {
+	private Cart getCart(Element empEl) {
 		
-		//for each <employee> element get text or int values of 
+		//for each <cart> element get text or int values of 
 		//name ,id, age and name
-		String name = getTextValue(empEl,"Name");
-		int id = getIntValue(empEl,"Id");
-		int age = getIntValue(empEl,"Age");
-
-		String type = empEl.getAttribute("type");
+		int cartid = getIntValue(empEl,"CartID");
+		String isbn = getTextValue(empEl,"ISBN");
+		String downloadlink = getTextValue(empEl,"DownloadLink");
 		
-		//Create a new Employee with the value read from the xml nodes
-		Employee e = new Employee(name,id,age,type);
+		//Create a new cart with the value read from the xml nodes
+		Cart cart = new Cart(cartid, isbn, downloadlink);
 		
-		return e;
+		return cart;
 	}
 
 
 	/**
 	 * I take a xml element and the tag name, look for the tag and get
 	 * the text content 
-	 * i.e for <employee><name>John</name></employee> xml snippet if
-	 * the Element points to employee node and tagName is name I will return John  
+	 * i.e for <cart><name>John</name></cart> xml snippet if
+	 * the Element points to cart node and tagName is name I will return John  
 	 * @param ele
 	 * @param tagName
 	 * @return
@@ -144,12 +143,17 @@ public class XmlDomParser {
 	 */
 	private void printData(){
 		
-		System.out.println("No of Employees '" + myEmpls.size() + "'.");
+		System.out.println("No of carts '" + mycarts.size() + "'.");
 		
-		Iterator it = myEmpls.iterator();
+		//TODO need to iterate
+		System.out.println(mycarts.get(0).getDownloadlink());
+		
+		/*
+		Iterator it = mycarts.iterator();
 		while(it.hasNext()) {
 			System.out.println(it.next().toString());
 		}
+		*/
 	}
 
 	

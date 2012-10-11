@@ -5,6 +5,7 @@
     <CartID>CartID</CartID>
     <ReviewID>ReviewID</ReviewID>
     <ProfileID>ProfileID</ProfileID>
+    <Password>Password</Password>
     <Admin>true</Admin>
   </USER>
   <EBOOK>
@@ -32,6 +33,5 @@
     <Address>Address</Address>
     <Email>Email</Email>
     <CreditCard>CreditCard</CreditCard>
-    <Password>Password</Password>
   </Profile>
 </ROOT>
