@@ -1,4 +1,7 @@
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -32,13 +35,28 @@ public class XmlDomParser {
 		//get each cart element and create a cart object
 		parseDocument();
 		
+		
+		Connection conn = null;
+		try {
+			Class.forName("org.h2.Driver");
+			conn = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			System.exit(0);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.exit(0);
+		}
+		
 		//TODO Connect to DB and insert into db
-		//Iterate through the list and print the data
-		printData();
+				//Iterate through the list and print the data
+		printData(conn);
+				
 		
 	}
 	
 	
+
 	private void parseXmlFile(){
 		//get the factory
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -141,12 +159,13 @@ public class XmlDomParser {
 	 * Iterate through the list and print the 
 	 * content to console
 	 */
-	private void printData(){
+	private void printData(Connection conn){
 		
 		System.out.println("No of carts '" + mycarts.size() + "'.");
 		
 		//TODO need to iterate
 		System.out.println(mycarts.get(0).getDownloadlink());
+		mycarts.get(0).insert(conn);
 		
 		/*
 		Iterator it = mycarts.iterator();
@@ -155,7 +174,6 @@ public class XmlDomParser {
 		}
 		*/
 	}
-
 	
 	public static void main(String[] args){
 		//create an instance

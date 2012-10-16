@@ -1,4 +1,7 @@
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class Cart {
@@ -43,6 +46,16 @@ public class Cart {
 	
 	//inserts into DB
 	public void insert(Connection conn){
+		
+		Statement statement = null;
+		try {
+			statement = conn.createStatement();
+			
+			ResultSet resultSet = statement.executeQuery("insert into cart values("+this.cartid+","+this.isbn+","+this.downloadlink+")");  
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}  
+        
 		
 	}
 	
