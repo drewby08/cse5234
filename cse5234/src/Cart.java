@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -47,15 +48,17 @@ public class Cart {
 	//inserts into DB
 	public void insert(Connection conn){
 		
-		Statement statement = null;
+		PreparedStatement statement = null;
 		try {
-			statement = conn.createStatement();
+			statement = conn.prepareStatement("insert into cart values(?,?,?)");
+			statement.setInt(1, this.cartid);
+			statement.setString(2, this.isbn);
+			statement.setString(3, this.downloadlink);
+			statement.execute();		
 			
-			ResultSet resultSet = statement.executeQuery("insert into cart values("+this.cartid+","+this.isbn+","+this.downloadlink+")");  
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}  
-        
+		} 
 		
 	}
 	
