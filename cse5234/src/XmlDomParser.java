@@ -17,7 +17,7 @@ import org.xml.sax.SAXException;
 
 public class XmlDomParser {
 
-	//No generics
+	//List of carts
 	List<Cart> mycarts;
 	Document dom;
 
@@ -103,7 +103,7 @@ public class XmlDomParser {
 
 
 	/**
-	 * I take an cart element and read the values in, create
+	 * take an cart element and read the values in, create
 	 * a cart object and return it
 	 * @param empEl
 	 * @return
@@ -124,10 +124,8 @@ public class XmlDomParser {
 
 
 	/**
-	 * I take a xml element and the tag name, look for the tag and get
+	 * take a xml element and the tag name, look for the tag and get
 	 * the text content 
-	 * i.e for <cart><name>John</name></cart> xml snippet if
-	 * the Element points to cart node and tagName is name I will return John  
 	 * @param ele
 	 * @param tagName
 	 * @return
